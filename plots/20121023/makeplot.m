@@ -7,7 +7,7 @@ plot_2012_democratic_presidential_primary_tx_harris();
 
 
 %%
-function [filename] = plot_2012_republican_presidential_primary_tx_harris()
+function [plot_filename] = plot_2012_republican_presidential_primary_tx_harris()
 
 year = '2012';
 election = 'Republican Primary';
@@ -77,15 +77,20 @@ data2 = load(data2_filename);
 
 allvotes = [data1(:,[5:9 11:13]) data2(:,6)];
 totals = data2(:,7);
-allpercents = bsxfun(@rdivide, allvotes, totals);
+
+[totals_sorted, idx_sorted] = sort(totals);
+allvotes_sorted = allvotes(idx_sorted,:);
+cumulativetotals = cumsum(totals_sorted);
+cumulativevotes = cumsum(allvotes_sorted);
+cumulativepercents = bsxfun(@rdivide, cumulativevotes, cumulativetotals);
 
 % plot percents against precinct size for each candidate
 
 close
 figure(1)
 hold on
-for i = 1:size(allpercents,2);
-  plot(totals, allpercents(:,i), '.', 'Color', cmap(i,:))
+for i = 1:size(cumulativepercents,2);
+  plot(cumulativetotals, cumulativepercents(:,i), '.-', 'Color', cmap(i,:))
 end
 title([year ' ' election ' (' event ') - ' county ', ' state ' - Per-Precinct Election Results'])
 xlabel('Total ballots in precinct')
@@ -137,13 +142,20 @@ data = load(data_filename);
 
 allvotes = data(:,5:8);
 totals = data(:,9);
-allpercents = bsxfun(@rdivide, allvotes, totals);
+
+[totals_sorted, idx_sorted] = sort(totals);
+allvotes_sorted = allvotes(idx_sorted,:);
+cumulativetotals = cumsum(totals_sorted);
+cumulativevotes = cumsum(allvotes_sorted);
+cumulativepercents = bsxfun(@rdivide, cumulativevotes, cumulativetotals);
+
+% plot percents against precinct size for each candidate
 
 close
 figure(1)
 hold on
-for i = 1:size(allpercents,2);
-  plot(totals, allpercents(:,i), '.', 'Color', cmap(i,:))
+for i = 1:size(cumulativepercents,2);
+  plot(cumulativetotals, cumulativepercents(:,i), '.-', 'Color', cmap(i,:))
 end
 title([year ' ' election ' (' event ') - ' county ', ' state ' - Per-Precinct Election Results'])
 xlabel('Total ballots in precinct')
@@ -218,13 +230,20 @@ data2 = load(data2_filename);
 
 allvotes = [data1(:,[5:9 11:13]) data2(:,6:8)];
 totals = data2(:,9);
-allpercents = bsxfun(@rdivide, allvotes, totals);
+
+[totals_sorted, idx_sorted] = sort(totals);
+allvotes_sorted = allvotes(idx_sorted,:);
+cumulativetotals = cumsum(totals_sorted);
+cumulativevotes = cumsum(allvotes_sorted);
+cumulativepercents = bsxfun(@rdivide, cumulativevotes, cumulativetotals);
+
+% plot percents against precinct size for each candidate
 
 close
 figure(1)
 hold on
-for i = 1:size(allpercents,2);
-  plot(totals, allpercents(:,i), '.', 'Color', cmap(i,:))
+for i = 1:size(cumulativepercents,2);
+  plot(cumulativetotals, cumulativepercents(:,i), '.-', 'Color', cmap(i,:))
 end
 title([year ' ' election ' (' event ') - ' county ', ' state ' - Per-Precinct Election Results'])
 xlabel('Total ballots in precinct')
@@ -280,13 +299,20 @@ data = load(data_filename);
 
 allvotes = data(:,[5:9 11]);
 totals = data(:,12);
-allpercents = bsxfun(@rdivide, allvotes, totals);
+
+[totals_sorted, idx_sorted] = sort(totals);
+allvotes_sorted = allvotes(idx_sorted,:);
+cumulativetotals = cumsum(totals_sorted);
+cumulativevotes = cumsum(allvotes_sorted);
+cumulativepercents = bsxfun(@rdivide, cumulativevotes, cumulativetotals);
+
+% plot percents against precinct size for each candidate
 
 close
 figure(1)
 hold on
-for i = 1:size(allpercents,2);
-  plot(totals, allpercents(:,i), '.', 'Color', cmap(i,:))
+for i = 1:size(cumulativepercents,2);
+  plot(cumulativetotals, cumulativepercents(:,i), '.-', 'Color', cmap(i,:))
 end
 title([year ' ' election ' (' event ') - ' county ', ' state ' - Per-Precinct Election Results'])
 xlabel('Total ballots in precinct')
