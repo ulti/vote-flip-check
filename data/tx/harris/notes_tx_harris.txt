@@ -1,0 +1,24 @@
+Harris County, TX
+http://www.harrisvotes.com/ElectionResults.aspx
+
+2012:
+20120529_democratic_primary_tx_harris/canvass.pdf
+20120529_republican_primary_tx_harris/canvass.pdf
+20120731_democratic_primary_runoff_tx_harris/canvass.pdf
+20120731_republican_primary_runoff_tx_harris/canvass.pdf
+
+2010:
+20100302_democratic_primary_tx_harris/canvass.pdf
+20100302_republican_primary_tx_harris/canvass.pdf
+20100413_democratic_primary_runoff_tx_harris/canvass.pdf
+20100413_republican_primary_runoff_tx_harris/canvass.pdf
+20101102_general_election_tx_harris/canvass.pdf
+
+2008:
+20080304_democratic_primary_tx_harris/dem_canvass.pdf
+20080304_republican_primary_tx_harris/rep_canvass.pdf
+20080408_democratic_primary_runoff_tx_harris/dem_canvass.pdf
+20080408_republican_primary_runoff_tx_harris/rep_canvass.pdf
+20081104_general_election_tx_harris/canvass.pdf
+
+Additional elections available back to 1998.
