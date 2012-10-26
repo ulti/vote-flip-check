@@ -1,0 +1,18 @@
+Dallas County, TX
+http://www.dallascountyvotes.org/election-results-and-maps/election-results/historical-election-results/
+
+2012:
+20120529_republican_primary_tx_dallas/CanvassedResults_Rep.zip
+20120529_republican_primary_tx_dallas/Rep_PctbyPct.zip
+20120529_democratic_primary_tx_dallas/CanvassedResults_Dem.zip
+20120529_democratic_primary_tx_dallas/Dem_PctbyPct.zip
+
+2008:
+20081104_general_election_tx_dallas/Canvassed_Results.zip
+20081104_general_election_tx_dallas/PCT_BY_PCT_Results.zip
+20080304_republican_primary_tx_dallas/CanvassedResults_Rep.zip
+20080304_republican_primary_tx_dallas/Rep_PctbyPct.zip
+20080304_democratic_primary_tx_dallas/CanvassedResults_Dem.zip
+20080304_democratic_primary_tx_dallas/Dem_PctbyPct.zip
+
+Additional elections available back to 1990.

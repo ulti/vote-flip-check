@@ -11,6 +11,8 @@ plot_2008_general_election_tx_dallas();
 plot_2012_republican_primary_tx_harris();
 plot_2012_democratic_primary_tx_harris();
 
+plot_2012_republican_primary_tx_dallas();
+plot_2012_democratic_primary_tx_dallas();
 
 %%
 function data = load_data(ci, idx)
@@ -452,6 +454,80 @@ data = load_data(ci);
 % 03 Barack Obama/Joe Biden (DEM)
 % 04 Bob Barr/Wayne A. Root (LIB)
 % 05 WRITE-IN
+
+allvotes = data(:,2:5);
+plot_filename = plot_cumulative_ballots_vs_vote_share(allvotes, ci);
+
+%%
+function [plot_filename] = plot_2012_republican_primary_tx_dallas()
+
+ci = struct;
+ci.year = '2012';
+ci.election = 'Republican Primary';
+ci.event = 'President';
+ci.county = 'Dallas County';
+ci.state = 'TX';
+ci.date_fn = '20120529';
+ci.election_fn = 'republican_primary';
+ci.event_fn = 'president';
+ci.county_fn = 'dallas';
+ci.state_fn = 'tx';
+ci.candidates = {'Gingrich','Davis','Huntsman','Roemer','Santorum', ...
+                 'Bachmann','Paul','Romney','Uncommitted'};
+ci.cmap = [ 0 .5  0; ... % Gingrich
+            1 .5 .2; ... % Davis
+            0  0  1; ... % Huntsman
+            0 .5  0; ... % Roemer
+           .5 .5  0; ... % Santorum
+            1 .7 .7; ... % Bachmann
+            0 .8 .8; ... % Paul
+            1  0  0; ... % Romney
+            0  0  0];    % Uncommitted
+
+data = load_data(ci);
+
+% 01 Precinct
+% 02 Newt Gingrich
+% 03 John Davis
+% 04 Jon Huntsman
+% 05 Charles "Buddy" Roemer
+% 06 Rick Santorum
+% 07 Michele Bachmann
+% 08 Ron Paul
+% 09 Mitt Romney
+% 10 Uncommitted
+
+allvotes = data(:,2:10);
+plot_filename = plot_cumulative_ballots_vs_vote_share(allvotes, ci);
+
+
+%%
+function [plot_filename] = plot_2012_democratic_primary_tx_dallas()
+
+ci = struct;
+ci.year = '2012';
+ci.election = 'Democratic Primary';
+ci.event = 'President';
+ci.county = 'Dallas County';
+ci.state = 'TX';
+ci.date_fn = '20120529';
+ci.election_fn = 'democratic_primary';
+ci.event_fn = 'president';
+ci.county_fn = 'dallas';
+ci.state_fn = 'tx';
+ci.candidates = {'Obama','Wolfe','Richardson','Ely'};
+ci.cmap = [ 0  0  1; ... % Obama
+            1  0  0; ... % Wolfe
+           .5  0 .5; ... % Richardson
+            0 .8  0];    % Ely
+
+data = load_data(ci);
+
+% 01 Precinct
+% 02 Barack Obama
+% 03 John Wolfe
+% 04 Darcy G. Richardson
+% 05 Bob Ely
 
 allvotes = data(:,2:5);
 plot_filename = plot_cumulative_ballots_vs_vote_share(allvotes, ci);
